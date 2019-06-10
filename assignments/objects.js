@@ -55,9 +55,6 @@ let interns = [
       "email" : "adaine5@samsung.com",
       "name" : "Antonietta",
       "gender" : "F",
-      "multiplyNums": function(num1, num2) {
-        return num1 * num2;
-      }
     }
 ]
 
@@ -81,6 +78,10 @@ console.log(interns[1].speak());
 
 // Antonietta loves math, give her the ability to multiply two numbers together and return the product. Use the console.log provided as a hint.
 //console.log(antonietta.multiplyNums(3,4));
+
+interns[4].multiplyNums = function(num1, num2) {
+  return num1 * num2;
+}
 
 // === Great work! === Head over to the the arrays.js file or take a look at the stretch challenge
 
