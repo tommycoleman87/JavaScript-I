@@ -77,7 +77,7 @@ console.log(interns[3].name);
 console.log(interns[4].gender);
 // ==== Challenge 3: Object Methods ==== 
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
-// console.log(kennan.speak());
+console.log(interns[1].speak());
 
 // Antonietta loves math, give her the ability to multiply two numbers together and return the product. Use the console.log provided as a hint.
 //console.log(antonietta.multiplyNums(3,4));
@@ -97,13 +97,22 @@ const speakName = (obj) => {
 const parent = {
   "name" : 'Susan',
   "age" : "70",
+  "speak" : function() {
+    console.log(this.name);
+  },
   "child" : 
     {
     "name" : "George",
     "age" : "50",
+    "speak" : function() {
+      console.log(this.name);
+    },
     "grandchild" : 
       {
       "name" : "Sam",
+      "speak" : function() {
+        console.log(this.name);
+      },
       "age" : "30"
     }
   }
@@ -116,8 +125,8 @@ console.log(parent.child.name)
 // Log the name and age of the grandchild
 console.log(parent.child.grandchild.name, parent.child.grandchild.age)
 // Have the parent speak
-speakName(parent);
+parent.speak();
 // Have the child speak
-speakName(parent.child);
+parent.child.speak();
 // Have the grandchild speak
-speakName(parent.child.grandchild);
+parent.child.grandchild.speak();
