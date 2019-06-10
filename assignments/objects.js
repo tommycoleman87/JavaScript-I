@@ -120,4 +120,4 @@ speakName(parent);
 // Have the child speak
 speakName(parent.child);
 // Have the grandchild speak
-speakName(paren.child.grandchild);
+speakName(parent.child.grandchild);
