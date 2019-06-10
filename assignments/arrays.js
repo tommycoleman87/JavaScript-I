@@ -78,13 +78,18 @@ inventory.forEach(function(car){
 
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
-let lastCar = inventory[0];
-for (let i = 0; i < inventory.length; i++) {
-    if(inventory[i].id > lastCar.id) {
-        lastCar = inventory[i];
-    }
-}
-console.log(lastCar.car_make, lastCar.car_model);
+//let lastCar = inventory[0];
+//for (let i = 0; i < inventory.length; i++) {
+//   if(inventory[i].id > lastCar.id) {
+//       lastCar = inventory[i];
+//    }
+//}
+//console.log(lastCar.car_make, lastCar.car_model);
+
+let lastCar = inventory.pop();
+console.log(`${lastCar.car_make} ${lastCar.car_model}`);
+
+
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
@@ -93,9 +98,7 @@ console.log(lastCar.car_make, lastCar.car_model);
 //   carModels.push(inventory[i].car_model);
 //}
 //console.log(carModels.sort());
-let carModels = inventory.map(function(car){
-    return car.car_model;
-}).sort();
+let carModels = inventory.map(car => car.car_model).sort();
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 //let carYears = [];
@@ -104,9 +107,7 @@ let carModels = inventory.map(function(car){
 //}
 //console.log(carYears);
 
-let carYears = inventory.map(function(car){
-    return car.car_year;
-});
+let carYears = inventory.map(car => car.car_year);
 console.log(carYears);
 
 // ==== Challenge 5 ====
@@ -119,7 +120,7 @@ console.log(carYears);
 //}
 //console.log(oldCars.length); 
 
-let oldCars = inventory.filter(function(car){return car.car_year < 2000});
+let oldCars = inventory.filter(car => car.car_year < 2000);
 console.log(oldCars.length);
 
 // ==== Challenge 6 ====
@@ -131,7 +132,7 @@ console.log(oldCars.length);
 //    }
 //}
 //console.log(BMWAndAudi);
-let BMWAndAudi = inventory.filter(function(car) { return car.car_make === "BMW" || car.car_make === "Audi"});
+let BMWAndAudi = inventory.filter(car => car.car_make === "BMW" || car.car_make === "Audi");
 console.log(BMWAndAudi);
 
 
