@@ -133,6 +133,6 @@ console.log(oldCars.length);
 //}
 //console.log(BMWAndAudi);
 let BMWAndAudi = inventory.filter(car => car.car_make === "BMW" || car.car_make === "Audi");
-console.log(BMWAndAudi);
+console.log(JSON.stringify(BMWAndAudi));
 
 
