@@ -18,21 +18,63 @@ const example = {
 }
 
 // Write your intern objects here:
+let interns = [
+  { 
+    "id" : 1,
+    "email" : 'mmelloy@psu.edu',
+    "name" : 'Mitzi',
+    "gender" : 'F'
+  },
+
+    {
+      "id" : 2,
+      "email" : "kdiben1@tinypic.com",
+      "name" : "Kennan",
+      "gender" : "M", 
+      "speak" : function() {
+        console.log('Hello, my name is Kennan!')
+      }
+    },
+
+    {
+      "id" : 3,
+      "email" : "kmummery2@wikimedia.org",
+      "name" : "Keven",
+      "gender" : "M"
+    },
+
+    {
+      "id" : 4,
+      "email" : "gmartinson3@illinois.edu",
+      "name" : "Gannie",
+      "gender" : "M"
+    },
+
+    {
+      "id" : 5,
+      "email" : "adaine5@samsung.com",
+      "name" : "Antonietta",
+      "gender" : "F",
+      "multiplyNums": function(num1, num2) {
+        return num1 * num2;
+      }
+    }
+]
 
 
 // ==== Challenge 2: Reading Object Data ==== 
 // Once your objects are created, log out the following requests from HR into the console:
 
 // Mitzi's name
-
+console.log(interns[0].name);
 // Kennan's ID
-
+console.log(interns[1].id);
 // Keven's email
-
+console.log(interns[2].email);
 // Gannie's name
-
+console.log(interns[3].name);
 // Antonietta's Gender
-
+console.log(interns[4].gender);
 // ==== Challenge 3: Object Methods ==== 
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 // console.log(kennan.speak());
@@ -48,17 +90,34 @@ const example = {
 // 2. Nest a child object in the parent object with name and age as well.  The name will be George and the age will be 50.
 // 3. Nest a grandchild object in the child object with properties for name and age.  The name will be Sam and the age will be 30
 // 4. Give each of the objects the ability to speak their names using the this keyword.
-
-const parent = {}
+const speakName = (obj) => {
+  this.name = obj.name;
+  console.log(this.name);
+}
+const parent = {
+  "name" : 'Susan',
+  "age" : "70",
+  "child" : 
+    {
+    "name" : "George",
+    "age" : "50",
+    "grandchild" : 
+      {
+      "name" : "Sam",
+      "age" : "30"
+    }
+  }
+}
 
 // Log the parent object's name
 
 // Log the child's age
-
+console.log(parent.child.name)
 // Log the name and age of the grandchild
-
+console.log(parent.child.grandchild.name, parent.child.grandchild.age)
 // Have the parent speak
-
+speakName(parent);
 // Have the child speak
-
+speakName(parent.child);
 // Have the grandchild speak
+speakName(paren.child.grandchild);
